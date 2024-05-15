@@ -15,7 +15,7 @@ import userRouter from "./Routes/UserRoutes.js";
 import { Strategy, ExtractJwt } from "passport-jwt";
 // import redis from "redis";
 import connectDatabase from "./Config/mongoDB.js";
-import User from "./models/UserModel.js";
+import User from "./Models/UserModel.js";
 import ContactSocialRouter from "./Routes/ContactSocialRoutes.js";
 import musicCreativeRouter from "./Routes/MusicCreativeRoutes.js";
 

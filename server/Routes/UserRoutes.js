@@ -3,7 +3,8 @@ import asyncHandler from "express-async-handler";
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import passport from "passport";
-import User from '../models/UserModel.js'
+// import User from '../models/UserModel.js'
+import User from '../Models/UserModel.js';
 import contactSocial from '../Models/ContactSocialModel.js';
 import musicCreative from '../Models/MusicCreativeModel.js';
 import sendVerificationEmail from '../utils/email.js';
