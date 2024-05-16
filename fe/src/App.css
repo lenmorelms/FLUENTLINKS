@@ -26,6 +26,7 @@
 
 .App-link {
   color: #61dafb;
+  text-decoration: none;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +36,44 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.register-form {
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #282c34;
+}
+
+.register-form h3 {
+  text-align: center;
+}
+
+.register-form form, .register-form .signup-text {
+  padding: 0 5%;
+}
+
+.form-label {
+  font-size: medium;
+}
+
+button[type=submit] {
+  width: 100%;
+}
+
+.plain-button {
+  background-color: transparent;
+  border: 0;
+  font-size: medium;
+}
+
+.form-input-error {
+  font-size: small;
+  color: red;
+  padding: 0 5%;
+}
+
+.form-input-error {
+  font-size: small;
+  padding: 0 5%;
 }

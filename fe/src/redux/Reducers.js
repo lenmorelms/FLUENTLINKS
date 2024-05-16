@@ -1,3 +1,4 @@
+import { faL } from "@fortawesome/free-solid-svg-icons";
 import { 
   ADD_CREATIVELINKS_FAILURE,
   ADD_CREATIVELINKS_REQUEST,
@@ -28,12 +29,16 @@ import {
   RESEND_TOKEN_REQUEST,
   RESEND_TOKEN_SUCCESS,
   RESET_PASSWORD_FAILURE, RESET_PASSWORD_REQUEST, RESET_PASSWORD_SUCCESS,
+  TEST_DATA_FAILURE,
+  TEST_DATA_REQUEST,
+  TEST_DATA_SUCCESS,
   USER_CREATIVELINKS_FAILURE,
   USER_CREATIVELINKS_REQUEST,
   USER_CREATIVELINKS_SUCCESS,
   USER_LOGIN_FAILURE, USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_LOGOUT,
   USER_PROFILE_FAILURE,
   USER_PROFILE_REQUEST,
+  USER_PROFILE_RESET,
   USER_PROFILE_SUCCESS,
   USER_REGISTER_FAILURE, USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS, 
   USER_SOCIALLINKS_FAILURE, 
@@ -42,6 +47,19 @@ import {
   USER_VERIFY_FAILURE, USER_VERIFY_REQUEST, USER_VERIFY_SUCCESS 
 } from "./Constants";
 
+// TEST
+export const testReducer = (state = { data: [] }, action) => {
+  switch(action.type) {
+    case TEST_DATA_REQUEST:
+      return { ...state, loading: true };
+    case TEST_DATA_SUCCESS:
+      return { ...state, data: action.payload, loading: false, error: null };
+    case TEST_DATA_FAILURE:
+      return { ...state, data: null, loading: false, error: action.payload };
+    default:
+      return state;
+  }
+};
 // ########## USER REDUCERS ################
 // LOGIN
 export const loginReducer = (state = { data: [] }, action) => {
@@ -64,9 +82,9 @@ export const registerReducer = (state = { data: [] }, action) => {
     case USER_REGISTER_REQUEST:
       return { ...state, loading: true };
     case USER_REGISTER_SUCCESS:
-      return { ...state, data: action.payload, loading: false, error: null };
+      return { ...state, data: action.payload, loading: false, error: null, success: true };
     case USER_REGISTER_FAILURE:
-      return { ...state, data: null, loading: false, error: action.payload };
+      return { ...state, data: null, loading: false, error: action.payload, success: false };
     default:
       return state;
   }
@@ -77,9 +95,9 @@ export const forgotPasswordReducer = (state = { data: [] }, action) => {
     case FORGOT_PASSWORD_REQUEST:
       return { ...state, loading: true };
     case FORGOT_PASSWORD_SUCCESS:
-      return { ...state, data: action.payload, loading: false, error: null };
+      return { ...state, data: action.payload, loading: false, error: null, success: true };
     case FORGOT_PASSWORD_FAILURE:
-      return { ...state, data: null, loading: false, error: action.payload };
+      return { ...state, data: null, loading: false, error: action.payload, success: false };
     default:
       return state;
   }
@@ -90,9 +108,9 @@ export const resetPasswordReducer = (state = { data: [] }, action) => {
     case RESET_PASSWORD_REQUEST:
       return { ...state, loading: true };
     case RESET_PASSWORD_SUCCESS:
-      return { ...state, data: action.payload, loading: false, error: null };
+      return { ...state, data: action.payload, loading: false, error: null, success: true };
     case RESET_PASSWORD_FAILURE:
-      return { ...state, data: null, loading: false, error: action.payload };
+      return { ...state, data: null, loading: false, error: action.payload, success: false };
     default:
       return state;
   }
@@ -132,6 +150,8 @@ export const profileReducer = (state = { data: [] }, action) => {
       return { ...state, data: action.payload, loading: false, error: null };
     case USER_PROFILE_FAILURE:
       return { ...state, data: null, loading: false, error: action.payload };
+    case USER_PROFILE_RESET:
+      return { data: [] };
     default:
       return state;
   }

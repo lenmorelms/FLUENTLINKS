@@ -17,7 +17,7 @@ function App() {
         <Route exact path='/signup' element={<RegisterScreen />} />
         <Route exact path='/signin' element={<LoginScreen />} />
         <Route exact path='/forgot-password' element={<ForgotPasswordScreen />} />
-        <Route exact path='/reset-password' element={<ResetPasswordScreen />} />
+        <Route exact path='/reset-password/:token' element={<ResetPasswordScreen />} />
         <Route exact path='verify/:token' element={<VerifyScreen />} />
       </Routes>
     </Router>

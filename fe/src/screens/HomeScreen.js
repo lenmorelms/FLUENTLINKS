@@ -1,25 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from '../logo.svg';
+import { useDispatch, useSelector } from "react-redux";
+import { test } from "../redux/Actions";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import LandingPage from "../components/LandingPage";
 
 const HomeScreen = () => {
+  const dispatch = useDispatch();
+  const testData = useSelector((state) => state._test);
+  const { data, loading, error } = testData;
+
+  useEffect(() => {
+    dispatch(test());
+  }, [dispatch])
     return (
         <>
-        <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+        <Header />
+        <LandingPage />
+        <Footer />
         </>
     )
 }

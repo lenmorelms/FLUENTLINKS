@@ -1,8 +1,9 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import { thunk } from "redux-thunk";
-import { addCreativeLinksReducer, addSocialLinksReducer, creativeLinksReducer, deleteCreativeLinksReducer, deleteProfileReducer, deleteSocialLinksReducer, editCreativeLinksReducer, editProfileReducer, editSocialLinksReducer, forgotPasswordReducer, loginReducer, profileReducer, registerReducer, resendTokenReducer, resetPasswordReducer, socialLinksReducer, verifyUserReducer } from "./Reducers";
+import { addCreativeLinksReducer, addSocialLinksReducer, creativeLinksReducer, deleteCreativeLinksReducer, deleteProfileReducer, deleteSocialLinksReducer, editCreativeLinksReducer, editProfileReducer, editSocialLinksReducer, forgotPasswordReducer, loginReducer, profileReducer, registerReducer, resendTokenReducer, resetPasswordReducer, socialLinksReducer, testReducer, verifyUserReducer } from "./Reducers";
 
 const rootReducer = combineReducers({
+    _test: testReducer,
     _login: loginReducer,
     _register: registerReducer,
     _forgotPassword: forgotPasswordReducer,

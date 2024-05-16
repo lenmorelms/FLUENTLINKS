@@ -12,6 +12,7 @@ import {
     FORGOT_PASSWORD_FAILURE, FORGOT_PASSWORD_REQUEST, FORGOT_PASSWORD_SUCCESS, 
     RESEND_TOKEN_FAILURE, RESEND_TOKEN_REQUEST, RESEND_TOKEN_SUCCESS, 
     RESET_PASSWORD_FAILURE, RESET_PASSWORD_REQUEST, RESET_PASSWORD_SUCCESS, 
+    TEST_DATA_FAILURE, TEST_DATA_REQUEST, TEST_DATA_SUCCESS, 
     USER_CREATIVELINKS_FAILURE, USER_CREATIVELINKS_REQUEST, USER_CREATIVELINKS_SUCCESS, 
     USER_LOGIN_FAILURE, USER_LOGIN_REQUEST, USER_LOGIN_SUCCESS, USER_LOGOUT, 
     USER_PROFILE_FAILURE, USER_PROFILE_REQUEST, USER_PROFILE_SUCCESS, 
@@ -29,6 +30,16 @@ function createConfig(contentType, Authorization) {
     };
     return config;
 }
+// TEST
+export const test = () => async (dispatch) => {
+    try {
+        dispatch({ type: TEST_DATA_REQUEST });
+        const response = await axios.get('/api/test');
+        dispatch({ type: TEST_DATA_SUCCESS, payload: response.data });
+    } catch (error) {
+        dispatch({ type: TEST_DATA_FAILURE, payload: error.message });
+    }
+};
 // ########## USER ACTIONS ################
 // LOGIN
 export const login = (email, password) => async (dispatch) => {
@@ -49,7 +60,7 @@ export const register = (email, username, age, gender, country, password) => asy
         dispatch({ type: USER_REGISTER_REQUEST });
         const config = createConfig("application/json");
         const response = await axios.post(`/api/users/register`, { email, username, age, gender, country, password }, config);
-        dispatch({ type: USER_REGISTER_SUCCESS, payload: response.data });    
+        dispatch({ type: USER_REGISTER_SUCCESS, payload: response.data.user });    
     } catch (error) {
         dispatch({ type: USER_REGISTER_FAILURE, payload: error.message });
     }
