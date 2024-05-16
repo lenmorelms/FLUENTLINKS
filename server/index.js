@@ -18,6 +18,7 @@ import connectDatabase from "./Config/mongoDB.js";
 import User from "./Models/UserModel.js";
 import ContactSocialRouter from "./Routes/ContactSocialRoutes.js";
 import musicCreativeRouter from "./Routes/MusicCreativeRoutes.js";
+import testRouter from "./Routes/TestRoutes.js";
 
 dotenv.config();
 connectDatabase();
@@ -63,6 +64,9 @@ passport.use(
 app.use("/api/users", userRouter);
 app.use("/api/social", ContactSocialRouter);
 app.use("/api/creative", musicCreativeRouter);
+
+// Test router
+app.use("/api/test", testRouter);
 
 // Error Handling
 // app.use(notFound);
