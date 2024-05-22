@@ -16,7 +16,6 @@ const HomeScreen = () => {
   }, [dispatch])
     return (
         <>
-        <Header />
         <LandingPage />
         <Footer />
         </>

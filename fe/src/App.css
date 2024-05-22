@@ -1,5 +1,7 @@
 .App {
-  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -13,9 +15,24 @@
   }
 }
 
+* {
+  color: #fff;
+}
+.color-white {
+  color: #fff!important;
+}
+
+.navbar-toggle, .navbar, .navbar a, .navbar-brand, .navbar-nav .nav-link {
+  color: white !important;
+}
+
+button .nav-link {
+  color: white !important;
+}
+
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  /* background-color: #282c34;
+  min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -76,4 +93,165 @@ button[type=submit] {
 .form-input-error {
   font-size: small;
   padding: 0 5%;
+}
+.logo-container span {
+  display: flex;
+  align-items: center; /* This centers the items vertically */
+}
+.logo-text {
+  background-color: transparent;
+  /* font-size: x-large; */
+  font-weight: bold;
+  /* font-family: 'Roboto', sans-serif; */
+  /* font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal; */
+}
+
+.big-text {
+  font-size: 60px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+}
+
+@media only screen and (max-width: 600px) {
+  .big-text {
+    font-size: 30px;
+
+  }
+}
+
+.btn-get-started {
+  background-color: #0060dd;
+  min-width: 30%;
+  margin: auto;
+  padding: 10px;
+  border: 1px solid #0060dd;
+  border-radius: 30px;
+  color: #fff;
+  font-size: medium;
+  font-weight: bold;
+}
+
+.btn-get-started:hover {
+  background-color: #0098cd;
+  transition: 0.5s;
+}
+
+.black-font {
+  color: #282c34!important;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.strong {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.light-strong {
+  font-size: large;
+  font-weight: normal;
+}
+.grey-font {
+  color: grey;
+}
+
+.my-links-page {
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.links-form input, .links-form input[type=url], .links-form input[type=email], .links-form input[type=tel], .links-form button, .links-form Select {
+  border: 1px solid transparent;
+  border-radius: 30px;
+  padding: 3%;
+}
+
+.links-row {
+  border: 1px solid grey;
+  border-radius: 30px;
+}
+
+.link-input {
+  border: 0!important;
+  border-bottom: 1px solid grey!important;
+}
+.block-center {
+  margin: 0 auto;
+  width: 30%;
+}
+/* styles.css */
+.custom-file-input {
+  display: flex;
+  align-items: center;
+}
+
+#customButton {
+  background-color: #61dafb;
+  border: 1px solid transparent;
+  border-radius: 30px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+#fileName {
+  font-family: Arial, sans-serif;
+}
+
+.image-button {
+  border: 1px solid transparent;
+  border-radius: 30px;
+  padding: 3%;
+}
+
+.image-round-borders {
+  border: 1px solid transparent;
+  border-radius: 50%;
+  /* opacity: 0.7; */
+  display: block;
+  filter: brightness(0.8) contrast(1.2); /* Adjust these values */
+}
+
+.align-items-center {
+  display: flex;
+  align-items: center;
+}
+
+
+.image-parent, .hero-image-parent {
+  position: relative;
+  background-color: transparent; /* Background color */
+  display: inline-block; /* Adjust as necessary */
+  overflow: hidden; /* Ensure content doesn't overflow */
+}
+
+.image {
+  display: block;
+  width: 100%;
+}
+
+.image-parent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, transparent, transparent 50%, #F8F9FA 85%);
+  pointer-events: none;
+}
+
+.hero-image-parent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle, transparent, transparent 50%, #282c34 85%);
+  pointer-events: none;
 }

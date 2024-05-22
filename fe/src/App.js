@@ -7,6 +7,7 @@ import LoginScreen from './screens/LoginScreen';
 import ForgotPasswordScreen from './screens/ForgotPasswordScreen';
 import ResetPasswordScreen from './screens/ResetPasswordScreen';
 import VerifyScreen from './screens/VerifyScreen';
+import MyLinksScreen from './screens/MyLinksScreen';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route exact path='/forgot-password' element={<ForgotPasswordScreen />} />
         <Route exact path='/reset-password/:token' element={<ResetPasswordScreen />} />
         <Route exact path='verify/:token' element={<VerifyScreen />} />
+        <Route exact path='/mylinks' element={<MyLinksScreen />} />
       </Routes>
     </Router>
   );
