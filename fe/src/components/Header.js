@@ -70,8 +70,8 @@ const Header = ({bgColor}) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="/mylinks">My Links</Nav.Link>
-            <Nav.Link href="/help">Help</Nav.Link>
+            <Nav.Link href="#">My Links</Nav.Link>
+            <Nav.Link href="#">Help</Nav.Link>
           </Nav>
           <Nav>
             {/* <Nav.Link href="/profile">Profile</Nav.Link> */}
